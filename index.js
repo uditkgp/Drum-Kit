@@ -1,8 +1,9 @@
-//var audio = new Audio('sounds/tom-1.mp3');
-//audio.play();
+//Event listener of button click
 
 for (var i = 0; i < 7; i++) {
+
     document.querySelectorAll("button")[i].addEventListener("click", function(){
+
         var buttonValue = this.innerHTML;
         
         pressedValue(buttonValue);
@@ -11,6 +12,7 @@ for (var i = 0; i < 7; i++) {
     });
 }
 
+//Event listener of key pressed
 
 document.addEventListener("keydown",function(keyboardEvent)
 {
@@ -19,11 +21,13 @@ document.addEventListener("keydown",function(keyboardEvent)
     buttonAnimation(keyboardEvent.key);
 });
 
+//play sound based on event - clicked or pressed
+
 function pressedValue(inputKey){
     switch (inputKey) {
         case "w":
-            var tom1 = new Audio('sounds/tom-1.mp3');
-            tom1.play();
+            var tom1 = new Audio('sounds/tom-1.mp3');                        //var audio = new Audio('sounds/tom-1.mp3');
+            tom1.play();                                                     //audio.play();
             break;
         case "a":
             var tom2 = new Audio('sounds/tom-2.mp3');
@@ -54,8 +58,12 @@ function pressedValue(inputKey){
     }
 }
 
+//show the button that has been pressed
+
 function buttonAnimation(key){
+
     var activebutton = document.querySelector("."+key);
+
     activebutton.classList.add("pressed");
 
     setTimeout(function(){
